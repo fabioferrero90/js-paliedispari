@@ -7,9 +7,11 @@ while (!correct){
   let promptedWord = prompt("Scrivi una parola per testare se è palindroma:")
 
   // Verifico che l'utente abbia inserito una parola senza spazi
-  if (!promptedWord.includes(" ")){
+  if (promptedWord && !promptedWord.includes(" ")){
     correct = true
     isPalindromic(promptedWord) ? (message = "La parola è palindroma") : (message = "La parola non è palindroma");
+  } else if (!promptedWord) {
+    message = "Devi inserire una parola!"  
   } else {
     message = "Devi inserire una sola parola!"
   }
