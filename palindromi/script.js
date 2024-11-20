@@ -24,7 +24,6 @@ function isPalindromic(string){
   const reversestring = string.split("").reverse().join("")
   if(reversestring === string){
     return true
-  } else {
-    return false
   }
+  return false
 }
