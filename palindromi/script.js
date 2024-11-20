@@ -24,7 +24,7 @@ while (!correct){
 // Creo una funzione che controlla se la parola è uguale anche al contrario (Palindroma)
 function isPalindromic(string){
   const reversestring = string.split("").reverse().join("")
-  if(reversestring === string){
+  if(reversestring.toLowerCase() === string.toLowerCase()){
     return true
   }
   return false
