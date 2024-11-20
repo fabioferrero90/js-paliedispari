@@ -7,24 +7,24 @@
 let bet;
 let betNumber;
 
+// Controllo che l'utente inserisca una scommessa PARI o DISPARI correttamente
 while (!bet) {
   let promptedBet = prompt("Scegli PARI o DISPARI")
+  let message = "Devi inserire PARI o DISPARI"
   if (promptedBet && isCorrectString(promptedBet)) {
     bet = promptedBet;
     message = `Hai scommesso ${bet}`;
-  } else {
-    message = "Devi inserire PARI o DISPARI"
   }
   alert(message)
 }
 
+// Controllo che l'utente inserisca un numero da 1 a 5 correttamente
 while (!betNumber) {
   let promptedNumber = prompt("Scegli un numero da 1 a 5")
+  let message = "Devi inserire un numero da 1 a 5"
   if (promptedNumber && isCorrectNumber(promptedNumber)) {
     betNumber = promptedNumber
     message = `Hai scelto ${betNumber}`
-  } else {
-    message = "Devi inserire un numero da 1 a 5"
   }
   alert(message)
 }
@@ -48,17 +48,11 @@ alert(`LA TUA SCOMMESSA:\n${betNumber} - ${bet}\n\nIl bot ha giocato ${botNumber
 
 // ELENCO FUNZIONI
 function isCorrectString(string) {
-  if (string.toUpperCase() === "PARI" || string.toUpperCase() === "DISPARI"){
-    return true
-  }
-  return false
+  return string.toUpperCase() === "PARI" || string.toUpperCase() === "DISPARI"
 }
 
 function isCorrectNumber(number) {
-  if ((parseInt(number) > 0) && (parseInt(number) <= 5)) {
-    return true
-  }
-  return false
+  return (parseInt(number) > 0) && (parseInt(number) <= 5)
 }
 
 
@@ -71,8 +65,5 @@ function sumNumbers(num1, num2) {
 }
 
 function isPair(number) {
-  if (!(number % 2)) {
-    return true
-  } 
-  return false
+  return !(number % 2)
 }
